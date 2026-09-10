@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://rsalesc.github.io/rbx/schemas/Preset.json
+
+name: default
+uri: https://github.com/rsalesc/rbx
+min_version: 0.35.1
+env: env.rbx.yml
+problem: problem
+contest: contest
+tracking:
+  problem:
+  - path: .gitignore
+  - path: statement/icpc.sty
+  - path: statement/template.rbx.tex
+  contest:
+  - path: .gitignore
+  - path: statement/icpc.sty
+  - path: statement/template.rbx.tex
+  - path: statement/contest.rbx.tex
+    symlink: true
