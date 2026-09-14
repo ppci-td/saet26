@@ -1,19 +1,66 @@
 %- block legend
-Mario 
+\begin{center}
+\includegraphics[scale=0.6]{mario.png}
+\end{center}
+Odracir é um grande fã de jogos retrô e de computação. Em uma tarde, ele estava jogando seu jogo favorito, \textit{Super Mario Bros.}, em seu Nintendinho.
+No jogo, Mario pode estar em dois tamanhos: Alto ou Baixo. Quando Mario está Alto e recebe dano de um inimigo, ele diminui de tamanho e passa a ficar Baixo. Caso Mario já esteja Baixo ao receber dano, ele morre.
+Mario também pode encontrar um cogumelo, que faz com que ele cresça. Assim, caso esteja Baixo, ele passa a ficar Alto. Se já estiver Alto, o cogumelo não altera seu tamanho.
+Além disso, Mario pode encontrar uma estrela, que o torna invulnerável aos danos causados pelos próximos 5 obstáculos. Enquanto estiver invulnerável, inimigos não causam dano a Mario, mas os obstáculos ainda são contabilizados.
+Certo dia, devido a um curto-circuito em seu console, o save do jogo de Odracir foi corrompido. Agora ele não sabe qual foi o destino de Mario na fase em que estava. Felizmente, usando suas habilidades computacionais, conseguiu recuperar parte do arquivo corrompido, contendo apenas a sequência de obstáculos que Mario encontraria ao longo da fase.
+
+Cada obstáculo pode ser:
+
+\begin{itemize}
+\item um inimigo, que causa dano a Mario;
+\item um cogumelo, que faz Mario crescer caso ele esteja Baixo;
+\item uma estrela, que torna Mario invulnerável aos próximos 5 obstáculos.
+\end{itemize}
+Considere que Mario começa a fase Alto e que os obstáculos são encontrados na ordem em que aparecem na sequência.
+Dada uma string representando todos os obstáculos da fase, determine se Mario morrerá ou sobreviverá à fase. Caso sobreviva, determine também se ele terminará a fase Alto ou Baixo.
 %- endblock
 
 %- block input
-The input is a single line containing two integers $A$ and $B$ ($\VAR{N.min} \leq A, B \leq \VAR{N.max | sci}$).
+A entrada consiste de apenas uma string $S$ representando os obstáculos da fase com pelo menos $1$ e no máximo $10^5$ letras, cada letra pode ser $D$, $C$ ou $E$, representando um obstáculo de \textit{Dano}, \textit{Cogumelo} e \textit{Estrela} respectivamente.
 %- endblock
 
 %- block output
-The output must contain only one integer, the sum of $A$ and $B$.
+A saída deve ser uma das seguintes 3 palavras: "Morto" caso Mario morra no percurso, "Alto" caso Mario sobreviva com sua estatura inicial e "Baixo" caso Mario sobreviva com a estatura menor que sua inicial.
+%- endblock
+
+%- block explanation_0
+Observe um fluxograma representando a mudança no estado do Mario a cada obstáculo do exemplo:
+
+\[
+\begin{aligned}
+\text{Alto} \overset{\texttt{D}}{\rightarrow} \text{Baixo}
+\overset{\texttt{C}}{\rightarrow} \text{Alto}
+\overset{\texttt{C}}{\rightarrow} \text{Alto}
+\overset{\texttt{E}}{\rightarrow} \text{Alto}
+\overset{\texttt{D}}{\rightarrow} \text{Alto}
+\overset{\texttt{C}}{\rightarrow} \text{Alto}
+\overset{\texttt{E}}{\rightarrow} \text{Alto}
+\overset{\texttt{D}}{\rightarrow} \text{Alto}
+\\
+\overset{\texttt{D}}{\rightarrow} \text{Alto}
+\overset{\texttt{C}}{\rightarrow} \text{Alto}
+\overset{\texttt{D}}{\rightarrow} \text{Alto}
+\overset{\texttt{C}}{\rightarrow} \text{Alto}
+\overset{\texttt{D}}{\rightarrow} \text{Baixo}
+\overset{\texttt{C}}{\rightarrow} \text{Alto}
+\end{aligned}
+\]
+%- endblock
+
+%- block explanation_2
+    Neste exemplo no terceiro obstáculo Mario já está baixo e recebe dano, logo ele morre neste momento.
 %- endblock
 
 %- block notes
-No notes.
+Caso Mario morra ele permanece neste estado mesmo que ainda há mais obstáculos a frente de onde ele recebeu dano.
 %- endblock
 
 %- block editorial
-This is the editorial.
+Podemos implementar uma solução iterando um loop por todas letras da string em ordem e contando qual a estatura atual do Mario, se no estado atual ele está sobre efeito de uma estrela, e caso sim, contar também contabilizar a duração do efeito, neste caso durante os obstáculos
+sobre efeito da estrela ignoramos todos os danos.
+Complexidade: $O(N)$ - Onde $N$ é o tamanho da string.
 %- endblock
