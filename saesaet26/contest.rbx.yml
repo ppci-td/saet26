@@ -1,11 +1,11 @@
 # yaml-language-server: $schema=https://rsalesc.github.io/rbx/schemas/Contest.json
 # Add problems by running `rbx contest add`
-name: new-contest
+name: Saet2026
 titles:
-  en: New contest
+  en: Maratona PPCI de Programação SAET 2026
 statements:
 - name: statement-en
-  language: en
+  language: pt
   path: statement/contest.rbx.tex
   type: JinjaTeX
   assets:
@@ -38,8 +38,10 @@ statements:
   path: statement/info.rbx.tex
   joiner:
 vars:
-  year: 2025
-  date: '2025-06-21'
+  year: 2026
+  date: '2026-10-14'
 problems:
+- short_name: D
+  path: problemas/dados
 - short_name: E
   path: problemas/encanador

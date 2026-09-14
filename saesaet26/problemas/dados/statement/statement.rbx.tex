@@ -1,0 +1,22 @@
+%- block legend
+Gabriel e André são irmãos gêmeos que cursam juntos Engenharia de Computação na UTFPR e também são grandes fãs de laranjas.
+Todos os dias em que a sobremesa do Restaurante Universitário é laranja são dias mais felizes para os dois. Porém, certo dia, quando foram pegar a sobremesa, perceberam que havia apenas uma laranja restante.
+Como meia laranja não seria suficiente para nenhum dos dois, eles decidiram fazer um sorteio para determinar quem ficaria com a fruta. Para isso, pegaram um par de dados que tinham consigo e lançaram os dois.
+As regras são simples: se André tirar um número maior que Gabriel, ele fica com a laranja. Da mesma forma, se Gabriel tirar um número maior que André, ele fica com a laranja.
+Caso os dois tirem o mesmo número, o critério de desempate será o seguinte: se o número obtido for ímpar, Gabriel fica com a laranja; se for par, a laranja fica com André.
+Dados os números obtidos nos dois dados, determine quem ficou com a laranja.
+
+%- endblock
+
+%- block input
+A entrada consiste em dois inteiros $A$ e $G$ ($1 \leq A, G \leq 6$), o núemro que André e Gabriel tiraram no dado respectivamente.
+%- endblock
+
+%- block output
+A Saída deve ser a frase "Andre ficou com a laranja"  ou "Gabriel ficou com a laranja"  de acordo com quem ganhou a laranja.
+%- endblock
+
+%- block editorial
+Verifique qual valor é maior ou verifique a paridade em caso de empate.
+Complxidade: $O(1)$
+%- endblock
