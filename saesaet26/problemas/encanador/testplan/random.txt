@@ -1,0 +1,10 @@
+gens/gen 123456
+gens/gen 12345678
+gens/pior 1238283
+gens/pior 29471273
+gens/sem_estrela 789237821
+gens/sem_estrela 8328391
+gens/sem_morto 4713789
+gens/sem_morto 3219783
+gens/pouco_morto 4123213
+gens/pouco_morto 412321514
