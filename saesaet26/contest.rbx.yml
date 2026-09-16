@@ -41,6 +41,8 @@ vars:
   year: 2026
   date: '2026-10-14'
 problems:
+- short_name: C
+  path: problemas/corredor
 - short_name: D
   path: problemas/dados
 - short_name: E

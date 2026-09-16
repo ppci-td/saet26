@@ -1,0 +1,11 @@
+gens/random 123456
+gens/random 12345678
+gens/random 459876
+gens/random 56987
+gens/random 8764
+gens/pior 039485
+gens/pior 398476
+gens/pior 98576
+gens/pinga 5687
+gens/pinga 2367
+gens/pinga 83745
