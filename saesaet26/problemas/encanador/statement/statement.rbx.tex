@@ -3,19 +3,24 @@
 \includegraphics[scale=0.6]{mario.png}
 \end{center}
 Odracir é um grande fã de jogos retrô e de computação. Em uma tarde, ele estava jogando seu jogo favorito, \textit{Super Mario Bros.}, em seu Nintendinho.
+
 No jogo, Mario pode estar em dois tamanhos: Alto ou Baixo. Quando Mario está Alto e recebe dano de um inimigo, ele diminui de tamanho e passa a ficar Baixo. Caso Mario já esteja Baixo ao receber dano, ele morre.
+
 Mario também pode encontrar um cogumelo, que faz com que ele cresça. Assim, caso esteja Baixo, ele passa a ficar Alto. Se já estiver Alto, o cogumelo não altera seu tamanho.
-Além disso, Mario pode encontrar uma estrela, que o torna invulnerável aos danos causados pelos próximos 5 obstáculos. Enquanto estiver invulnerável, inimigos não causam dano a Mario, mas os obstáculos ainda são contabilizados.
-Certo dia, devido a um curto-circuito em seu console, o save do jogo de Odracir foi corrompido. Agora ele não sabe qual foi o destino de Mario na fase em que estava. Felizmente, usando suas habilidades computacionais, conseguiu recuperar parte do arquivo corrompido, contendo apenas a sequência de obstáculos que Mario encontraria ao longo da fase.
+
+Além disso, Mario pode encontrar uma estrela, que o torna invulnerável a danos pelos próximos 5 obstáculos. Enquanto estiver invulnerável, inimigos não causam dano a Mario, mas os obstáculos ainda são contabilizados.
+
+Certo dia, devido a um curto-circuito em seu console, o \textit{save} do jogo de Odracir foi corrompido. Agora ele não sabe qual foi o destino de Mario na fase em que estava. Felizmente, usando suas habilidades computacionais, conseguiu recuperar parte do arquivo corrompido, contendo apenas a sequência de obstáculos que Mario encontraria ao longo da fase.
 
 Cada obstáculo pode ser:
 
 \begin{itemize}
 \item um inimigo, que causa dano a Mario;
 \item um cogumelo, que faz Mario crescer caso ele esteja Baixo;
-\item uma estrela, que torna Mario invulnerável aos próximos 5 obstáculos.
+\item uma estrela, que torna Mario invulnerável a danos aos próximos 5 obstáculos.
 \end{itemize}
 Considere que Mario começa a fase Alto e que os obstáculos são encontrados na ordem em que aparecem na sequência.
+
 Dada uma string representando todos os obstáculos da fase, determine se Mario morrerá ou sobreviverá à fase. Caso sobreviva, determine também se ele terminará a fase Alto ou Baixo.
 %- endblock
 
@@ -24,7 +29,7 @@ A entrada consiste de apenas uma string $S$ representando os obstáculos da fase
 %- endblock
 
 %- block output
-A saída deve ser uma das seguintes 3 palavras: "Morto" caso Mario morra no percurso, "Alto" caso Mario sobreviva com sua estatura inicial e "Baixo" caso Mario sobreviva com a estatura menor que sua inicial.
+A saída deve ser uma linha com uma das seguintes 3 palavras: ``MORTO'' caso Mario morra no percurso, ``ALTO'' caso Mario sobreviva com sua estatura inicial, ou ``BAIXO'' caso Mario sobreviva com a estatura menor que sua inicial.
 %- endblock
 
 %- block explanation_0
