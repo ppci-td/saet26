@@ -5,85 +5,94 @@ using namespace std;
 #define vll vector<ll>
 #define bazinga ios::sync_with_stdio(false);cin.tie(nullptr);
 
-vll pai(101), sz(101);
+vll fibs;                   
+unordered_map<ll,ll> id;  
+
+vll pai, sz;
 ll maiorset = 1;
 
-void mset(ll v){
+void precomputa(){
+  fibs = {1,2};
+  while(fibs.back() <= (ll)2e18 / 2){
+    ll proximo = fibs[fibs.size()-1] + fibs[fibs.size()-2];
+    fibs.pb(proximo);
+  }
+  for(ll i = 0; i < fibs.size(); i++) id[fibs[i]] = i;
+}
+
+void mset(int v){
   pai[v] = v;
   sz[v] = 1;
 }
 
-ll fset(ll v){
-  if(v == pai[v]) return v;
+int fset(int v){
+  if (v == pai[v]) return v;
   return pai[v] = fset(pai[v]);
 }
 
-void uset(ll a, ll b){
-   a = fset(a); b = fset(b);
-   if(a != b){
-       if(sz[a] < sz[b]) swap(a, b);
-       pai[b] = a;
-       sz[a] += sz[b];
-       if(sz[a] > maiorset){
-        maiorset = sz[a];
-        //maiorraiz = a;
-       }
-   }
+void uset(int a, int b){
+  a = fset(a); b = fset(b);
+  if (a != b){
+    if(sz[a] < sz[b]) swap(a, b);
+    pai[b] = a;
+    sz[a] += sz[b];
+    maiorset = max(maiorset, sz[a]);
+  }
 }
 
 vll zeckendorf(ll n){
-  vll fib = {1,2};
-  while(fib.back() <= n){
-    fib.pb(fib[fib.size()-1]+fib[fib.size()-2]);
-  }
-  fib.pop_back();
-
   vll ans;
-  for(auto it = fib.rbegin(); it != fib.rend(); it++){
-    if(n >= *it){
-      ans.pb(*it);
-      n -= *it;
+  for(ll i = fibs.size()-1; i >= 0; i--){
+    if(n >= fibs[i]){
+      ans.pb(fibs[i]);
+      n -= fibs[i];
     }
   }
   return ans;
 }
 
-
 void solve(){
+  precomputa();
+  ll tam = fibs.size();
+  pai.assign(tam, 0); sz.assign(tam, 0);
+
+  for(ll i = 0; i < tam; i++) mset(i);
+
   ll n; cin >> n;
   vll v(n), todos;
-  for(ll i = 1; i <= 100; i++){
-    mset(i);
-  }
+
+  for(ll i = 0; i < n; i++) cin >> v[i];
+  sort(v.begin(), v.end());
   for(ll i = 0; i < n; i++){
-    cin >> v[i];
     vll cur = zeckendorf(v[i]);
-    todos.pb(cur[0]);
+
+    ll ind = id[cur[0]];
+    todos.pb(ind);
+
     for(ll j = 1; j < cur.size(); j++){
-      uset(cur[j-1], cur[j]);
-      todos.pb(cur[j]);
+      ll a = id[cur[j-1]], b = id[cur[j]];
+      uset(a, b);
+      todos.pb(b);
     }
   }
-
-  // cout << maiorset << endl;
-  // for(ll i : todos) cout << i << " "; 
-  // cout << endl;
 
   cout << maiorset << endl;
 
-  if(maiorset == 1LL){
-    auto it = min_element(todos.begin(), todos.end())-todos.begin();
-    cout << todos[it] << endl;
+  if(maiorset == 1){
+    auto it = min_element(todos.begin(), todos.end());
+    cout << fibs[*it] << endl;
     return;
   }
 
-  for(ll i = 1; i <= 100; i++){
+  for(ll i = 0; i < tam; i++){
     if(sz[i] == maiorset){
-      for(ll j = 1; j <= 100; j++){
-        if(fset(j) == i) cout << j << " ";
+      for(ll j = 0; j < tam; j++){
+        if(fset(j) == i) cout << fibs[j] << " ";
       }
+      cout << endl;
       return;
     }
-  }  
+  }
 }
-int main(){bazinga; solve(); return 0;}
+
+int main(){bazinga;solve();return 0;}

@@ -3,7 +3,7 @@ name: kurt
 timeLimit: 1000 # ms
 memoryLimit: 256 # MiB
 titles:
-  en: New problem
+  pt: Kurt Manipulando Células
 checker: {path: wcmp.cpp}   # Download others from testlib with `rbx download checker`
 validator: {path: validator.cpp}
 testcases:
@@ -34,7 +34,7 @@ statements:
 - name: statement-en
   path: statement/statement.rbx.tex     # Open this file to edit your statement.
   type: rbxTeX
-  language: en
+  language: pt
   assets:   # Define assets for the statement.
   - statement/icpc.sty
   - statement/*.png
@@ -65,8 +65,11 @@ unitTests:
 # and in the statement.
 vars:
   # Author name to be displayed in the editorial.
-  author: John Doe
+  author: Henrique Farias
   # Constraints of the problem.
   N:
     min: 1
-    max: 1000000000
+    max: 100000
+  M:
+    min: 1
+    max: 1000000000000000000
