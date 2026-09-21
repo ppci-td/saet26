@@ -1,11 +1,11 @@
 %- block legend
-Kurt é um camaleão azul que gosta muito de matemática, computação e biologiacelular. Atualmente ele está pesquisando um tipo peculiar de célula, que possui um nível de energia $K$ e é capaz de se multiplicar através de um processo que
+Kurt é um camaleão azul que gosta muito de matemática, computação e biologia celular. Atualmente ele está pesquisando um tipo peculiar de célula, que possui um nível de energia $K$ e é capaz de se multiplicar através de um processo que
 ele batizou de Mitose Fibonáccica: a célula se divide em um conjunto de novas células cuja soma das energias é exatamente $K$, e cada uma dessas
 novas células possui energia igual a um número de Fibonacci.
  
 Usando sua expertise em computação, Kurt conseguiu programar a Mitose Fibonáccica de forma manipulada, fazendo com que o conjunto resultante tenha a
 menor quantidade possível de células. Formalmente, ele obtém a decomposição de $K$ como soma da menor quantidade de números de Fibonacci
-distintos e não consecutivos que somam $K$.
+distintos que somam $K$.
  
 Kurt possui $N$ células, cada uma com seu próprio valor energético $K_i$. Ele aplica a Mitose Fibonáccica manipulada em todas elas, de forma que cada célula
 $i$ se divide em um novo conjunto de subcélulas como demonstrado na imagem a seguir:
@@ -31,8 +31,9 @@ Depois dessas operações, Kurt quer saber qual é o conjunto com a maior quanti
 A primeira linha contém um único inteiro $N$ ($1 \leq N \leq 10^5$). A quantidade de células que
 Kurt possui.
  
-A segunda linha contém $N$ inteiros $K_1, K_2, \ldots, K_N$ ($1 \leq K_i \leq 10^{18}$)os valores
-energéticos de cada célula.
+A segunda linha contém $N$ inteiros $K_1, K_2, \ldots, K_N$ ($1 \leq K_i \leq 10^{18}$), os valores
+energéticos de cada célula. É garantido que todo $K_i$ dado na entrada pode ser
+escrito como a soma de um conjunto de números de Fibonacci.
 %- endblock
 
 %- block output
