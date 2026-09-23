@@ -47,5 +47,7 @@ problems:
   path: problemas/dados
 - short_name: E
   path: problemas/encanador
+- short_name: H
+  path: problemas/horario
 - short_name: K
   path: problemas/kurt
