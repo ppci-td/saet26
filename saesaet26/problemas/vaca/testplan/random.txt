@@ -1,0 +1,6 @@
+gens/gen_suave 1234562
+gens/gen_suave 123456781
+gens/gen_rand 123123
+gens/gen_rand 123493867
+gens/gen_hard 25894576
+gens/gen_hard 98457

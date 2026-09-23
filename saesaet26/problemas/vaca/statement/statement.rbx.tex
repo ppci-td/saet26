@@ -1,0 +1,48 @@
+%- block legend
+
+\begin{center}
+    \includegraphics[scale=1.0]{vaca.png}
+\end{center}
+
+Quando começou a estudar números binários, a vaca MU ficou fascinada com o
+assunto!
+
+Ela escolheu dois números inteiros positivos $A$ e $B$, com $A \leq B$,
+e escreveu a representação binária, sem zeros à esquerda, de todos os números de $A$ até $B$ (inclusive
+e nesta ordem) em seu quadro branco, formando uma string $S_{A,B}$. Depois, ela
+contou quantos dígitos 1 (um) apareceram em $S_{A,B}$ e anotou este número no
+quadro, o chamando de $f(A,B)$.
+
+Como exemplo, considere $A=5$ e $B=10$. A string $S_{5,10}$ é
+101110111100010011010. Como há 12 dígitos 1 (um) em
+$S_{5,10}$, tem-se que $f(5,10) = 12$.
+
+O camaleão Kurt resolveu pregar uma peça na vaca MU e, durante a noite, apagou
+várias informações que estavam no quadro! Os únicos valores que o camaleão
+deixou escritos são $B$ e $f(A,B)$.
+
+Sua tarefa é ajudar a vaca MU a lembrar qual era o valor de $A$.
+
+%- endblock
+
+%- block input
+A primeira linha contém um inteiro $T$ ($1 \leq T \leq 1000$), o número de casos
+de teste.
+
+Cada caso de teste é dado por uma linha contendo dois inteiros $B$ e $f$
+($1 \leq B \leq 10^{16}$, $0 \leq f \leq 10^{18}$), o valor de $B$ e de
+$f(A,B)$, respectivamente.
+
+%- endblock
+
+%- block output
+Para cada caso de teste, imprima uma linha com o valor de $A$.
+
+Caso não exista um valor de $A$ condizente com os valores de $B$ e $f(A,B)$
+dados na entrada, imprima a mensagem dada no exemplo de
+saída abaixo. Note que a mensagem deve ser impressa em \textit{três} linhas.
+%- endblock
+
+%- block editorial
+This is the editorial.
+%- endblock
