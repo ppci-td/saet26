@@ -50,5 +50,42 @@ string se torna \texttt{ooxxooxxx}, e o final da escada não aparece.
 %- endblock
 
 %- block editorial
-This is the editorial.
+Mantenha uma \textit{sequência ordenada de intervalos} de acertos seguidos. Por exemplo,
+para a string \texttt{ooxoxooxx}, a sequência de intervalos é $([1-2],[4-4],[6-7])$ (os intervalos de
+acertos seguidos). Já para a string \texttt{ooxooooxx}, a sequência
+se torna $([1-2],[4-7])$.
+
+Além da sequência de todos os intervalos de acertos seguidos, mantenha também a
+\textit{subsequência} ordenada contendo
+apenas os intervalos \textit{válidos}, que são aqueles cujo tamanho é maior ou
+igual a $K$. Para a string \texttt{ooxooooxx} e $K=3$, a subsequência de intervalos válidos
+é $([4-7])$.
+
+Ao trocar um acerto por um erro, encontre na(s) sequência(s) o intervalo a qual
+pertence, e quebre-o em até outros dois
+intervalos. Como exemplo, se existe o intervalo $[6-8]$ e é trocado o resultado
+da tentativa 7, este intervalo deixa de existir e passam a existir outros dois:
+$[6-6]$ e $[8-8]$. Já se existe o intervalo $[6-8]$ e é trocado o resultado da
+tentativa 8, o intervalo passa a ser $[6-7]$; e se já existe o intervalo $[4-4]$
+e é trocado o resultado da tentativa 4, o intervalo é removido da(s)
+sequência(s).
+
+Ao trocar um erro por um acerto: dois intervalos podem ser ``unidos''; um
+intervalo pode aumentar; ou um novo intervalo pode ser criado. Como exemplo, se
+existem os intervalos $[1-2]$ e $[4-5]$ e é trocado o resultado da tentativa 3,
+ambos os intervalos são ``unidos'' e trocados por $[1-5]$; se existe apenas o intervalo
+$[1-2]$, ele aumenta para $[1-3]$; se nenhum dos intervalos existem, um novo
+intervalo $[3-3]$ é criado.
+
+A cada alteração na sequência de intervalos, lembre de atualizar, se necessário,
+também a subsequência de intervalos válidos. A resposta é sempre dada por $l+K$,
+sendo $l$ o início do primeiro
+intervalo da subsequência de intervalos válidos, ou -1 se a subsequência está
+vazia.
+
+Utilize estruturas de dados eficientes, como dois \textit{set de pairs} do C++,
+de forma que cada operação (buscar, inserir e remover) é feita em $O(\lg N)$.
+
+Complexidade total: $O(N\lg N + Q\lg N)$
+
 %- endblock
