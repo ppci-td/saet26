@@ -18,11 +18,10 @@ int main() {
         if (catu == f)
             printf("%lld\n", atu);
         else {
-            printf("eu aposto que voce nao vai digitar todas essas linhas e vai preferir\n");
-            printf("copiar e colar ela do PDF da prova, afinal elas sao muito grandes\n");
-            printf("nao eh mesmo? Por isso, esta saida eh uma critica.\n");
+            printf("Eu aposto que voce nao vai digitar todas\n");
+            printf("essas linhas e vai copiar e colar do PDF.\n");
+            printf("Por isso, esta saida eh uma critica.\n");
         }
-
     }
 
     return 0;
