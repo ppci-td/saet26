@@ -1,0 +1,60 @@
+%- block legend
+\vspace{-0.25cm}
+\begin{center}
+    \includegraphics[width=0.28\textwidth]{lobo.png}
+\end{center}
+
+Na floresta vive um lobo selvagem que adora melancias. Sempre que está com fome,
+ele parte na floresta em busca da sua fruta favorita.\\
+A floresta tem $N$ pontos e $M$ trilhas, que
+ligam um par de pontos cada. As trilhas são as únicas formas de se mover pela
+floresta e, para ir um ponto a outro, o lobo pode passar por várias trilhas.\\
+São dadas $Q$ consultas. Em cada consulta, são dadas as posições atuais do
+lobo e de uma melancia. Determine se o lobo consegue ir até essa melancia e saciar
+sua fome.
+
+%- endblock
+
+%- block input
+
+A primeira linha contém dois inteiros $N$ e $M$
+($\VAR{N.min} \leq N \leq \VAR{N.max | sci}$,
+$\VAR{M.min} \leq M \leq \VAR{M.max | sci}$), o número de pontos e de trilhas.
+Considere que pontos são numerados de $1$ até $N$.\\
+As próximas $M$ linhas descrevem uma trilha cada. Cada trilha é dada por dois
+inteiros $A$ e $B$ ($1 \leq A, B \leq N$), indicando os pontos os quais a trilha
+conecta.\\
+A próxima linha contém um inteiro $Q$ ($\VAR{Q.min} \leq Q \leq \VAR{Q.max |
+sci}$), o número de consultas.
+As próximas $Q$ linhas descrevem uma consulta cada. Cada consulta é dada por
+dois inteiros $l$ e $m$ ($1 \leq l, m \leq N$), indicando o ponto onde está o
+lobo e a melancia, respectivamente.
+%- endblock
+
+%- block output
+Para cada consulta, imprima \texttt{sim} se o lobo pode
+ir até a melancia, ou \texttt{nao} caso contrário.
+%- endblock
+
+%- block notes
+Na primeira consulta, o lobo consegue chegar até a melancia percorrendo, por
+exemplo, a trilha $1 \leftrightarrow 5$ e depois a trilha $5 \leftrightarrow 7$.
+%- endblock
+
+%- block editorial
+Este problema envolve conceitos da Teoria dos Grafos.
+
+Fazer uma busca (em profundidade ou em largura) para cada consulta não será rápido o bastante, dado que
+cada busca tem custo $O(N+M)$ e o custo total seria, portanto,
+$O(Q\times(N+M))$.
+
+Entretanto, note que, em um grafo não direcionado, existe um caminho de $l$ para
+$m$ se e somente se $l$ e $m$ estão na mesma componente conexa.
+
+Assim, pré-processe o grafo com uma única busca (em profundidade ou em largura) para identificar
+a componente conexa a qual cada vértice pertence. Então, para cada consulta,
+verifique se $l$ e $m$ estão na mesma componente, ou em componentes distintas.
+
+Como esta verificação pode ser feita em $O(1)$ após o pré-processamento, a complexidade total se torna
+$O(N+M+Q)$.
+%- endblock

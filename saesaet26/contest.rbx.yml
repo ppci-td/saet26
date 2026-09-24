@@ -55,3 +55,5 @@ problems:
   path: problemas/horario
 - short_name: K
   path: problemas/kurt
+- short_name: L
+  path: problemas/lobo

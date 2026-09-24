@@ -1,0 +1,3 @@
+gens/gen_rand 123456
+gens/gen_rand 12345678
+gens/gen_linhas 384957
