@@ -44,5 +44,68 @@ saída abaixo. Note que a mensagem deve ser impressa em \textit{três} linhas.
 %- endblock
 
 %- block editorial
-This is the editorial.
+Seja $a$ um inteiro positivo menor ou igual a $B$. Note que:
+\begin{itemize}
+    \item se $f(a,B) = f(A,B)$, então $A=a$;
+    \item se $f(a,B) < f(A,B)$, então $A<a$; e
+    \item se $f(a,B) > f(A,B)$, então $A>a$.
+\end{itemize}
+
+Esta observação nos permite resolver o problema fazendo \textit{busca binária} em $a$.
+Assim, o problema se torna calcular o valor de $f(a,B)$ para
+algum $a \leq B$ dado.
+
+Seja $F(N)$ o número total de \textit{bits} 1 em todos os inteiros
+menores ou iguais a $N$. Note que
+\begin{itemize}
+    \item $f(a,B) = F(B) - F(a-1)$
+\end{itemize}
+
+Assim, o problema agora se reduz a calcular $F(N)$ para algum inteiro $N$ dado.
+
+$F(N)$ pode ser computado com uma técnica de Programação Dinâmica conhecida como
+\textit{digit dp}.
+
+Seja $n$ o número de \textit{bits} de $N$, e seja $N_{n-1}N_{n-2}...N_1N_0$ a
+representação binária de $N$, do \textit{bit} mais para o menos significativo.
+
+Considere que você está escrevendo, em binário, os números menores ou iguais a
+$N$, do \textit{bit} mais significativo ao menos significativo. Considere o estado
+$dp[b][l]$, onde $b$ indica a posição do \textit{bit} que você está escrevendo
+agora, e
+$l=1$ (de
+``limitado'') se todos os \textit{bits} que você já escreveu até o
+momento são exatamente iguais a $N_{n-1}N_{n-2}...N_{b+1}$, ou $l=0$ caso contrário
+(a ideia aqui é que, se $l=1$, você ainda precisa ``tomar cuidado'' para não
+ escrever um número maior que $N$; se $l=0$, você já pode escrever qualquer
+ número, pois ele certamente será menor ou igual a $N$. O ignorar do último caso
+ da $dp$, dado abaixo, garante esta propriedade).
+O estado $dp[b][l]$ retorna o número de \textit{bits} 1 que serão escritos ao
+todo sob estas condições, de forma que $F(N) = dp[n-1][1]$.
+
+O valor de $dp[b][l]$ é:
+\begin{itemize}
+    \item considerando escrever o \textit{bit} 0 na posição $b$:
+    \begin{itemize}
+        \item[$\rightarrow$] $dp[b-1][l']$, onde $l' = 1$ se e somente se $l = 1$ e $N_b = 0$;
+    \end{itemize}
+    \item considerando escrever o \textit{bit} 1 na posição $b$:
+    \begin{itemize}
+        \item[$\rightarrow$] se $l=0$, o \textit{bit} 1 aparece, na posição $b$, em todos os $2^b$ números
+        possíveis de serem escritos a partir desse estado; logo, somar
+        $2^b + dp[b-1][0]$;
+        \item[$\rightarrow$] se $l=1$ e $N_b = 1$, o \textit{bit} 1 aparece, na posição $b$, em
+        todos os $N_{b-1}N_{b-2}...N_0 + 1$ números possíveis de serem escritos a
+        partir desse estado; logo, somar
+        $N_{b-1}N_{b-2}...N_0 + 1 + dp[b-1][1]$;
+        \item[$\rightarrow$] se $l=1$ e $N_b = 0$, não é possível escrever o \textit{bit} 1 na
+        posição $b$. Ignore este caso.
+    \end{itemize}
+\end{itemize}
+
+Uma possível referência para \textit{digit dp} é \url{https://www.geeksforgeeks.org/dsa/digit-dp-introduction/}
+
+Complexidade: $O(\lg B)$ (da busca binária) $\times$ $O(\lg B)$ (do
+        \textit{digit dp}) = $O((\lg B)^2)$ por caso de teste.
+
 %- endblock
