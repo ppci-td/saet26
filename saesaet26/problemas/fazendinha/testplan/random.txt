@@ -1,0 +1,8 @@
+gens/gen_rand 123456
+gens/gen_rand 12345678
+gens/gen_qsetudo 2309458
+gens/gen_qsetudo 93876
+gens/gen_qsenada 23094234
+gens/gen_qsenada 93889756
+gens/gen_impossivel 94876
+gens/gen_zero 4875

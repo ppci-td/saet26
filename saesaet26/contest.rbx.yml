@@ -51,6 +51,8 @@ problems:
   path: problemas/dados
 - short_name: E
   path: problemas/encanador
+- short_name: F
+  path: problemas/fazendinha
 - short_name: G
   path: problemas/duvida
 - short_name: H
