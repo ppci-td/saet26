@@ -36,7 +36,7 @@ Para cada consulta, imprima \texttt{sim} se o lobo pode
 ir até a melancia, ou \texttt{nao} caso contrário.
 %- endblock
 
-%- block notes
+%- block explanation_0
 Na primeira consulta, o lobo consegue chegar até a melancia percorrendo, por
 exemplo, a trilha $1 \leftrightarrow 5$ e depois a trilha $5 \leftrightarrow 7$.
 %- endblock
@@ -54,6 +54,10 @@ $m$ se e somente se $l$ e $m$ estão na mesma componente conexa.
 Assim, pré-processe o grafo com uma única busca (em profundidade ou em largura) para identificar
 a componente conexa a qual cada vértice pertence. Então, para cada consulta,
 verifique se $l$ e $m$ estão na mesma componente, ou em componentes distintas.
+
+Referência a busca em profundidade: \url{https://cp-algorithms.com/graph/depth-first-search.html}  
+
+Referência a busca em largura: \url{https://cp-algorithms.com/graph/breadth-first-search.html}
 
 Como esta verificação pode ser feita em $O(1)$ após o pré-processamento, a complexidade total se torna
 $O(N+M+Q)$.
