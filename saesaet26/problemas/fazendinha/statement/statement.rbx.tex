@@ -33,7 +33,6 @@ Se não for possível colher pelo menos $T$ batatas, imprima \texttt{-1}.
 
 Caso contrário, imprima o menor valor de $D$ necessário para se colher pelo menos
 $T$ batatas.
-\newpage % pro exemplo ficar na outra pagina, junto com a figura
 
 %- endblock
 
@@ -49,5 +48,43 @@ todo. É impossível colher pelo menos 70 batatas com $D < 2$.
 %- endblock
 
 %- block editorial
-This is the editorial.
+Note que o formato da área coletada é o de um \textit{losango}.
+Primeiramente, rotacione a matriz de forma a tornar a área coletada um
+\textit{retângulo}, paralelo aos eixos da matriz.
+
+Esta rotação pode ser feita com a transformação
+$T: (i,j) \mapsto (i+j, j-i)$.
+
+A figura abaixo exemplifica a matriz original e
+nova matriz rotacionada:
+
+\begin{center}
+\includegraphics[scale=0.65]{editorial.png}
+\end{center}
+
+(Obs: para a implementação, as dimensões da matriz nova são dobradas; os
+ ``buracos'' da matriz nova são preenchidos com zero; um
+ deslocamento fixo (\textit{offset}) é usado nos índices das colunas para não acessar
+ colunas de índices negativos.)
+
+Com a nova matriz, pré-compute sua \textit{prefix-sum}, de forma a tornar
+possível obter a soma de qualquer submatriz (em uma região retangular) em $O(1)$. Você
+pode ler sobre \textit{prefix-sum} em matrizes em
+\url{https://www.geeksforgeeks.org/dsa/prefix-sum-2d-array/} .
+
+Para cada $1 \leq i \leq N$ e $1 \leq j \leq M$, determine o
+menor valor de $D$ necessário para coletar ao menos $T$ batatas se a
+colheitadeira for acionada em $(i,j)$. A resposta é o menor desses valores.
+
+Dada uma posição $(i,j)$ da matriz original, use a \textit{busca binária} para determinar o menor
+valor de $D$ necessário a partir dela: dada uma distância $D$, calcule a soma
+dos elementos no losango de vértices opostos
+$(i,j-D)$ e $(i,j+D)$ que na nova matriz transformada é o
+retângulo de vértices opostos $(i+j-D,j-D-i)$ e $(i+j+D,j+D-i)$.
+Esta soma pode ser obtida em $O(1)$ com a \textit{prefix-sum} pré-calculada.
+Se esta soma for maior ou igual a $T$, diminua o valor de $D$; caso contrário,
+aumente o valor de $D$ (nos termos da busca binária).
+
+Complexidade Total: $O(N \times M \times \lg (N+M))$
+
 %- endblock
