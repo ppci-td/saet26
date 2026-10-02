@@ -57,6 +57,8 @@ problems:
   path: problemas/duvida
 - short_name: H
   path: problemas/horario
+- short_name: I
+  path: problemas/invasores
 - short_name: J
   path: problemas/jornada
 - short_name: K
