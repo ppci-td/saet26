@@ -63,3 +63,5 @@ problems:
   path: problemas/kurt
 - short_name: L
   path: problemas/lobo
+- short_name: M
+  path: problemas/maratona

@@ -1,0 +1,48 @@
+%- block legend
+
+Logo após esta Maratona de Programação, a organização irá fazer uma
+confraternização na \textit{Unidade de Festas, Passatempo e Recreação}
+(\textbf{UFPR}) da cidade. A dona da unidade é a famosa Tia Milena, que está preparando uma
+brincadeira para fazer com os convidados.
+
+A brincadeira será a seguinte: Tia Milena irá mostrar a todos uma \textit{string} de $N$
+letras minúsculas, inicialmente igual a $S$. Então, ela irá esconder a
+\textit{string} do público, e fazer uma sequência de $M$ operações na
+\textit{string}, uma após a outra. Na operação $i$ ($1 \leq i \leq M$), Tia Milena irá inverter a ordem das
+letras que estão entre as posições $L_i$ e $R_i$ (inclusive) na \textit{string}.
+
+Depois de fazer todas as operações, ela irá perguntar para a plateia como a
+\textit{string} ficou. Quem acertar irá ganhar um grande prêmio! Você consegue
+apresentar a \textit{string} final após todas as $M$ operações?
+
+%- endblock
+
+%- block input
+A primeira linha contém dois inteiros $N$ e $M$
+($\VAR{N.min} \leq N \leq \VAR{N.max | sci}$,
+$\VAR{M.min} \leq M \leq \VAR{M.max | sci}$), o tamanho da \textit{string} e o
+número de operações. A segunda linha contém a \textit{string} inicial $S$, com
+$N$ letras minúsculas.
+As próximas $M$ linhas descrevem uma operação cada, na ordem em que serão
+feitas. Cada linha contém dois inteiros $L_i$ e $R_i$
+($1 \leq L_i \leq R_i \leq N$).
+
+%- endblock
+
+%- block output
+Imprima uma linha com a \textit{string} final após todas as operações.
+%- endblock
+
+%- block notes
+No primeiro exemplo de entrada, as seguintes operações serão feitas:
+\begin{itemize}
+    \item \texttt{l\underline{worllhe}od} $\rightarrow$ \texttt{lehllrowod}
+    \item \texttt{\underline{leh}llrowod} $\rightarrow$ \texttt{helllrowod}
+    \item \texttt{hell\underline{lrowo}d} $\rightarrow$ \texttt{helloworld}
+\end{itemize}
+A \textit{string} final é, portanto, \texttt{helloworld}.
+%- endblock
+
+%- block editorial
+This is the editorial.
+%- endblock
