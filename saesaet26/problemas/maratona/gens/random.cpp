@@ -9,11 +9,6 @@ int main(int argc, char *argv[]) {
     n = opt<int>(1);
     m = opt<int>(2);
     printf("%d %d\n", n, m);
-    for (int i=0;i<n;i++) {
-        int tt = rnd.next(0,25);
-        printf("%c",'a'+tt);
-    }
-    printf("\n");
     for (int i=0;i<m;i++) {
         int l = rnd.next(1,n);
         int r = rnd.next(1,n);

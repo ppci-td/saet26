@@ -3,15 +3,15 @@
 using namespace std;
 
 int n, m ;
-char s[200020];
+int P[200020];
 
 struct nodo {
-    char info;  // letra no nodo
+    int info;  // letra no nodo
     int y;      // x é o indice em s. x é implicito pela posicao na árvore
     int tam;
     bool flag;  // lazy. true se precisa inverter
     nodo *esq, *dir;
-    nodo(char l, int yy): info(l), y(yy), tam(1), flag(false), esq(NULL), dir(NULL) {}
+    nodo(int l, int yy): info(l), y(yy), tam(1), flag(false), esq(NULL), dir(NULL) {}
 };
 
 int gettam(nodo *r) { return (r ? r->tam : 0); }
@@ -58,7 +58,7 @@ void inorder(nodo *r) {
     if (r==NULL) return;
     unflag(r);
     inorder(r->esq);
-    printf("%c",r->info);
+    printf("%d ",r->info+1);
     inorder(r->dir);
 }
 
@@ -67,7 +67,7 @@ nodo *build(int ini, int fim) {
     if (ini > fim)
         return NULL;
     int meio = (ini+fim)/2;
-    nodo *r = new nodo(s[meio],Y--);
+    nodo *r = new nodo(P[meio],Y--);
     r->esq = build(ini,meio-1);
     r->dir = build(meio+1,fim);
     upd(r);
@@ -77,7 +77,7 @@ nodo *build(int ini, int fim) {
 int main() {
 
     scanf("%d %d", &n, &m);
-    scanf("%s",s);
+    for (int i=0;i<n;i++) P[i] = i;
     nodo *raiz = build(0,n-1);
 
     for (int i=0;i<m;i++) {

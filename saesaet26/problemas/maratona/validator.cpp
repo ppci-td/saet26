@@ -17,8 +17,6 @@ int main(int argc, char *argv[]) {
   inf.readSpace();
   int M = inf.readInt(MIN_M, MAX_M, "M");
   inf.readEoln();
-  string s = inf.readString("[a-z]*");
-  assert(s.size() == N);
   for (int i=0;i<M;i++) {
         int L = inf.readInt(MIN_N, MAX_N, "L");
         inf.readSpace();

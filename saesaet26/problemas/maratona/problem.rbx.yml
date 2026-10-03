@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://rsalesc.github.io/rbx/schemas/Package.json
 name: maratona
 timeLimit: 1000 # ms
-memoryLimit: 256 # MiB
+memoryLimit: 384 # MiB
 titles:
-  pt: Maratona de Maratonas
+  pt: Material de Consulta
 checker: {path: wcmp.cpp}   # Download others from testlib with `rbx download checker`
 validator: {path: validator.cpp}
 testcases:

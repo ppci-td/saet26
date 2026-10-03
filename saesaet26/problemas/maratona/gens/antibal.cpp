@@ -39,11 +39,6 @@ int main(int argc, char *argv[]) {
     n = opt<int>(1);
     m = 100000;
     printf("%d %d\n", n, m);
-    for (int i=0;i<n;i++) {
-        int tt = rnd.next(0,25);
-        printf("%c",'a'+tt);
-    }
-    printf("\n");
     ordem.clear();
     getordem(0,n-1);
     vai();

@@ -3,15 +3,15 @@
 using namespace std;
 
 int n, m;
-char s[200020];
+int P[200020];
 
 struct nodo {
-    char info;  // letra no nodo
+    int info;  // letra no nodo
     int y;      // x é o indice em s. x é implicito pela posicao na árvore
     int tam;
     bool flag;  // lazy. true se precisa inverter
     nodo *esq, *dir;
-    nodo(char l, int yy): info(l), y(yy), tam(1), flag(false), esq(NULL), dir(NULL) {}
+    nodo(int l, int yy): info(l), y(yy), tam(1), flag(false), esq(NULL), dir(NULL) {}
 };
 
 int gettam(nodo *r) { return (r ? r->tam : 0); }
@@ -50,7 +50,7 @@ nodo *merge(nodo *L, nodo *R) {
 }
 
 // insere repetido se ja tiver x
-nodo *insere(nodo *raiz, char letra, int x, int y) {
+nodo *insere(nodo *raiz, int letra, int x, int y) {
     unflag(raiz);
     nodo *novo = new nodo(letra,y);
     nodo *L, *R;
@@ -67,7 +67,7 @@ void inorder(nodo *r) {
     if (r==NULL) return;
     unflag(r);
     inorder(r->esq);
-    printf("%c",r->info);
+    printf("%d ",r->info+1);
     inorder(r->dir);
 }
 
@@ -76,10 +76,10 @@ int main() {
     //srand(time(NULL) + clock());
 
     scanf("%d %d", &n, &m);
-    scanf("%s",s);
+    for (int i=0;i<n;i++) P[i]=i;
     nodo *raiz = NULL;
     for (int i=0;i<n;i++)
-        raiz = insere(raiz, s[i], i, i /*rand()*/);
+        raiz = insere(raiz, P[i], i, i /*rand()*/);
 
     for (int i=0;i<m;i++) {
         int l, r;
