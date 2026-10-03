@@ -15,7 +15,12 @@ void solve(){
         v.pb(v[i]);
     }
 
-    vll cnt(n, 0);
+//    vll cnt(n, 0);
+    ll maior = v[0];
+    for (ll i : v)
+        maior = max(maior, i);
+    vll cnt(maior+1, 0);
+
     ll num = 0, esq = 0, ans = 0;
 
     auto add = [&](ll x){
