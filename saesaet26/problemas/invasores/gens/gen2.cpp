@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
     for(int i = 0; i < N; i++){
         int M = rnd.next(1, 1000);
         cout << M;
-        if(i != N-1) cout << " ";
+        cout << " ";
     }
     cout << endl;
 }

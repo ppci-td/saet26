@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define ll long long
 #define pb push_back
 #define vll vector<ll>
@@ -48,11 +47,7 @@ void solve(){
         ans = max(ans, dir - esq + 1);
     }
 
-    cout << min(ans, n) << '\n';
+    cout << min(ans, n) << endl;
 }
 
-int main(){
-    bazinga;
-    solve();
-    return 0;
-}
+int main(){bazinga;solve();return 0;}
