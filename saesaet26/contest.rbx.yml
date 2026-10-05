@@ -2,9 +2,9 @@
 # Add problems by running `rbx contest add`
 name: Saet2026
 titles:
-  en: Maratona PPCI de Programação SAET 2026
+  pt: Maratona PPCI de Programação SAET 2026
 statements:
-- name: statement-en
+- name: statement-pt
   language: pt
   path: statement/contest.rbx.tex
   type: JinjaTeX
@@ -21,8 +21,8 @@ statements:
         # Turn into false to hide time limits and memory limits in the problem statement.
         # Useful for ICPC-style contests where you distribute a separate info sheet.
       show_limits: true
-- name: editorial-en
-  extends: statement-en
+- name: editorial-pt
+  extends: statement-pt
   override:
     vars:
         # Whether to show the problem statement in the editorial.
@@ -33,13 +33,13 @@ statements:
       # Whether to render an "EDITORIAL" watermark.
     watermark: false
     editorial: true
-- name: info-en
-  extends: statement-en
+- name: info-pt
+  extends: statement-pt
   path: statement/info.rbx.tex
   joiner:
 vars:
   year: 2026
-  date: '2026-10-14'
+  date: '2026-10-15'
 problems:
 - short_name: A
   path: problemas/vaca
