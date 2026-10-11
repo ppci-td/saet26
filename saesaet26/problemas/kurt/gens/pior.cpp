@@ -9,7 +9,8 @@ int main(int argc, char *argv[]) {
     for(int i = 0; i < N; i++){
         long long M = rnd.next(10000000000000000);
         if(M == 0) M++;
-        cout << M << " ";
+        if (i) cout << " ";
+        cout << M;
     }
     cout << endl;
 }

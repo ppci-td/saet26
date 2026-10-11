@@ -10,8 +10,8 @@ int main(int argc, char *argv[]) {
     cout << N << " " << K << endl;
     for(int i = 0; i < N; i++){
         int M = rnd.next(1, 100000);
+        if (i) cout << " ";
         cout << M;
-        cout << " ";
     }
     cout << endl;
 }

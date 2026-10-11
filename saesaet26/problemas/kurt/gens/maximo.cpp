@@ -6,11 +6,11 @@ int main(int argc, char *argv[]) {
     int n = 1e5;
     int N = n;
     cout << N << endl;
-    cout << 99999999999999999 << " ";
+    cout << 99999999999999999;
     for(int i = 1; i < N; i++){
         long long M = rnd.next(10000000000000000);
         if(M == 0) M++;
-        cout << M << " ";
+        cout << " " << M;
     }
     cout << endl;
 }

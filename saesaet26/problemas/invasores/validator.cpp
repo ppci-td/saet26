@@ -11,8 +11,8 @@ int main(int argc, char *argv[]) {
   int K = inf.readInt(1, 100000, "K");
   inf.readEoln();
   for(int i = 0; i < N; i++){
+    if (i) inf.readSpace();
     int M = inf.readInt(1, 100000, "M");
-    inf.readSpace();
   }
   inf.readEoln();
   inf.readEof(); 
