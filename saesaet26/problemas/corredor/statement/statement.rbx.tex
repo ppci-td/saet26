@@ -1,17 +1,22 @@
 %- block legend
 
-\begin{wrapfigure}{l}{0.28\textwidth}
-    \centering
-    \includegraphics[width=0.28\textwidth]{mario.png}
-\end{wrapfigure}
-
+% o jugisto nao aceita warp
+\noindent
+\parbox[t]{0.25\textwidth}{
+        \vspace{0pt}
+    \includegraphics[width=\linewidth]{mario.png}
+}
+\hfill
+\parbox[t]{0.70\textwidth}{
+        \vspace{0pt}
 Você está jogando o clássico \textit{Super Mario 64}, e chegou em uma parte
-estranha: há um corredor com uma escada que parece ser infinita...
+estranha: há um corredor com uma escada que parece ser infinita...\\
 
 Mas você descobriu um jeito de passar pela escada, explorando \sout{um bug} uma
 técnica avançada de pulo. Se você conseguir acertar um pulo bem específico $K$
 vezes seguidas, o final da escada finalmente aparece! Acertar o pulo,
 entretanto, não é nada fácil.
+}
 
 Considere uma sequência de $N$ tentativas do pulo, feitas no instante 1, 2,
 etc., até o instante $N$. A sequência é representada por uma string

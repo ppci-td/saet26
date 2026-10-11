@@ -1,10 +1,9 @@
 %- block legend
 
-\begin{wrapfigure}{r}{0.25\textwidth}
-    \centering
-    \includegraphics[width=0.25\textwidth]{maratona.png}
-\end{wrapfigure}
-
+% o jugisto nao aceita wrap AAAAAAA
+\noindent
+\parbox[t]{0.70\textwidth}{
+        \vspace{0pt}
 Pensando em estar sempre preparada para as Maratonas de Programação que
 ocorrem durante o ano, sua equipe está montando seu material
 de consulta. O material contém a implementação pronta de $N$ algoritmos
@@ -14,11 +13,17 @@ O material tem $N$ páginas. Tanto os algoritmos quanto as páginas são numerad
 de $1$ a $N$.
 Inicialmente, o algoritmo $i$ estava na página $i$ ($1 \leq i \leq N$).
 
-Entretanto, sua equipe
-decidiu fazer $M$ operações no material.
+Entretanto, sua equipe decidiu fazer $M$ operações no material.
 Em cada operação, a equipe inverteu a ordem dos
-algoritmos entre as páginas $L_i$ e $R_i$, inclusive. Sua equipe
-acredita que, fazendo isso, o material fica mais organizado.
+algoritmos entre as páginas $L_i$ e $R_i$, inclusive.
+}
+\hfill
+\parbox[t]{0.25\textwidth}{
+        \vspace{0pt}
+    \includegraphics[width=\linewidth]{maratona.png}
+}
+
+Sua equipe acredita que, fazendo isso, o material fica mais organizado.
 
 Temos outra Maratona amanhã, na
 LATINOWARE em Foz do Iguaçu, e sua equipe precisa do material de consulta
