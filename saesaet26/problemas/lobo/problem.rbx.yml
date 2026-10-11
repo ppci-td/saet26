@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://rsalesc.github.io/rbx/schemas/Package.json
 name: lobo
 timeLimit: 1000 # ms
-memoryLimit: 256 # MiB
+memoryLimit: 384 # MiB
 titles:
   pt: Lobo Faminto
 checker: {path: wcmp.cpp}   # Download others from testlib with `rbx download checker`
