@@ -1,36 +1,25 @@
 %- block legend
 
-% o jugisto nao aceita warp
-\noindent
-\parbox[t]{0.25\textwidth}{
-        \vspace{0pt}
-    \includegraphics[width=\linewidth]{mario.png}
-}
-\hfill
-\parbox[t]{0.70\textwidth}{
-        \vspace{0pt}
+\begin{center}
+    \includegraphics[width=0.25\linewidth]{mario.png}
+\end{center}
 Você está jogando o clássico \textit{Super Mario 64}, e chegou em uma parte
-estranha: há um corredor com uma escada que parece ser infinita...\\
-
-Mas você descobriu um jeito de passar pela escada, explorando \sout{um bug} uma
+estranha: há um corredor com uma escada que parece ser infinita...
+Mas você descobriu um jeito de passar pela escada, explorando uma
 técnica avançada de pulo. Se você conseguir acertar um pulo bem específico $K$
 vezes seguidas, o final da escada finalmente aparece! Acertar o pulo,
 entretanto, não é nada fácil.
-}
 
 Considere uma sequência de $N$ tentativas do pulo, feitas no instante 1, 2,
 etc., até o instante $N$. A sequência é representada por uma string
 $S$, de tamanho $N$, onde $S_i = $ \texttt{o} se a tentativa no instante $i$ foi acertada, e
 $S_i = $ \texttt{x} se a tentativa no instante $i$ foi errada.
-
 O final da escada aparece no primeiro instante em que se completa $K$ acertos seguidos.
 
-Você deve processar $Q$ operações; em cada operação, troque (de
+Processe $Q$ operações; em cada operação, troque (de
 acerto para erro e vice-versa) a tentativa em um instante $i$ dado.
 As mudanças feitas em uma operação se mantém para as operações seguintes.
-
 Após cada operação, determine em que instante o final da escada aparece.
-
 %- endblock
 
 %- block input
@@ -47,8 +36,8 @@ escada aparece. Se o final da escada não aparecer em nenhum instante, imprima
 -1.
 %- endblock
 
-%- block notes
-Considere o exemplo dado. Após a primeira operação, a string se torna \texttt{ooxooooxx}, e o final
+%- block explanation_0
+Após a primeira operação, a string se torna \texttt{ooxooooxx}, e o final
 aparece no instante 6. Após a segunda operação, a string se torna
 \texttt{ooxxoooxx}, e o final aparece no instante 7. Após a terceira operação, a
 string se torna \texttt{ooxxooxxx}, e o final da escada não aparece.

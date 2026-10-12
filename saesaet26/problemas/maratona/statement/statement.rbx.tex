@@ -1,9 +1,12 @@
 %- block legend
 
 % o jugisto nao aceita wrap AAAAAAA
-\noindent
-\parbox[t]{0.70\textwidth}{
-        \vspace{0pt}
+% e nem parbox kkkkrying
+
+\begin{center}
+\includegraphics[width=0.2\linewidth]{maratona.png}
+\end{center}
+
 Pensando em estar sempre preparada para as Maratonas de Programação que
 ocorrem durante o ano, sua equipe está montando seu material
 de consulta. O material contém a implementação pronta de $N$ algoritmos
@@ -16,13 +19,6 @@ Inicialmente, o algoritmo $i$ estava na página $i$ ($1 \leq i \leq N$).
 Entretanto, sua equipe decidiu fazer $M$ operações no material.
 Em cada operação, a equipe inverteu a ordem dos
 algoritmos entre as páginas $L_i$ e $R_i$, inclusive.
-}
-\hfill
-\parbox[t]{0.25\textwidth}{
-        \vspace{0pt}
-    \includegraphics[width=\linewidth]{maratona.png}
-}
-
 Sua equipe acredita que, fazendo isso, o material fica mais organizado.
 
 Temos outra Maratona amanhã, na
@@ -49,7 +45,7 @@ material de consulta.
 %- endblock
 
 %- block explanation_0
-No primeiro exemplo de entrada, as seguintes operações serão feitas:
+No exemplo de entrada, as seguintes operações serão feitas:
 \begin{itemize}
     \item $[1,\underline{2,3},4,5,6]$ $\rightarrow$ $[1,3,2,4,5,6]$
     \item $[1,3,\underline{2,4,5,6}]$ $\rightarrow$ $[1,3,6,5,4,2]$
